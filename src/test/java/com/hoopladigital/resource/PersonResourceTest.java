@@ -21,11 +21,14 @@ public class PersonResourceTest extends AbstractTest {
 	@Mock
 	private PersonService personService;
 
+	@Mock
+	private PetResource petResource;
+
 	private PersonResource personResource;
 
 	@Before
 	public void beforePersonResourceTest() {
-		personResource = new PersonResource(personService);
+		personResource = new PersonResource(personService, petResource);
 	}
 
 	@Test

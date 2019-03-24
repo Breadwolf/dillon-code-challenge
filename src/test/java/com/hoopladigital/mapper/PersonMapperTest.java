@@ -32,7 +32,8 @@ public class PersonMapperTest extends AbstractMapperTest {
 		// assert results
 		assertEquals(10, personList.size());
 		beanTestHelper.diffBeans(george, personList.get(0));
-
 	}
+
+	
 
 }
