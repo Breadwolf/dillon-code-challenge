@@ -59,7 +59,9 @@ public class PetResource {
 			throw new NotFoundException("Combination of person id " + personId + " and pet id " + petId + " not found");
 		}
 
-		return petService.updatePet(pet);
+		//this makes it possible to assign pets to new owners by changing their personId. If that's not intended
+		//then would need some extra validation to make sure it matches personId supplied in path
+		return petService.updatePet(petId, pet);
 	}
 
 	@DELETE

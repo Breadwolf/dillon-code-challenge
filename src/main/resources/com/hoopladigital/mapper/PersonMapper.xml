@@ -31,17 +31,17 @@
 			lastName
 		)
 		values(
-			firstName,
-			middleName,
-			lastName
+			#{firstName,jdbcType=VARCHAR},
+			#{middleName,jdbcType=VARCHAR},
+			#{lastName,jdbcType=VARCHAR}
 		)
 	</insert>
 
 	<update id="updatePerson">
 		update Person set
-			firstName = #{firstName},
-			middleName = #{middleName},
-			lastName = #{lastName}
+			firstName = #{firstName,jdbcType=VARCHAR},
+			middleName = #{middleName,jdbcType=VARCHAR},
+			lastName = #{lastName,jdbcType=VARCHAR}
 		where id = #{id}
 	</update>
 

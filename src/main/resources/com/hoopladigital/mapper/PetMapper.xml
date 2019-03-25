@@ -31,15 +31,15 @@
 			name
 		)
 		values(
-			personId,
-			name
+			#{personId},
+			#{name,jdbcType=VARCHAR}
 		)
 	</insert>
 
 	<update id="updatePet">
 		update Pet set
 			personId = #{personId},
-			name = #{name}
+			name = #{name,jdbcType=VARCHAR}
 		where id = #{petId}
 	</update>
 

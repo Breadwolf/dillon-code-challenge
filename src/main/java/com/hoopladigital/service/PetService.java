@@ -34,7 +34,8 @@ public class PetService {
 		}
 	}
 
-	public Pet updatePet(Pet pet) {
+	public Pet updatePet(Long petId, Pet pet) {
+		pet.setId(petId);
 		if (petMapper.updatePet(pet) > 0) {
 			return pet;
 		} else {

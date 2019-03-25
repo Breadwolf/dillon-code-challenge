@@ -58,7 +58,7 @@ public class PersonResource {
 	@Path("{personId}")
 	@Consumes("application/json")
 	@Produces("application/json")
-	public Person updatePerson(Person person, @PathParam("personId") Long personId) {
+	public Person updatePerson(@PathParam("personId") Long personId, Person person) {
 
 		//we could just ignore the incoming id (like in create), but I feel that this mismatch is more serious and may be
 		//a bug on the client side. They are likely trying to update the wrong record with the wrong data
@@ -72,7 +72,7 @@ public class PersonResource {
 			throw new NotFoundException("Person id " + personId + " not found");
 		}
 
-		return personService.updatePerson(person);
+		return personService.updatePerson(personId, person);
 	}
 
 	@DELETE

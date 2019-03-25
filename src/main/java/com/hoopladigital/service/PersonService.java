@@ -32,7 +32,8 @@ public class PersonService {
 		}
 	}
 
-	public Person updatePerson(Person person) {
+	public Person updatePerson(Long personId, Person person) {
+		person.setId(personId);
 		if (personMapper.updatePerson(person) > 0) {
 			return person;
 		} else {
