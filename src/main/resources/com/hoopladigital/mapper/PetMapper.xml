@@ -40,13 +40,13 @@
 		update Pet set
 			personId = #{personId},
 			name = #{name,jdbcType=VARCHAR}
-		where id = #{petId}
+		where id = #{id}
 	</update>
 
 	<delete id="deletePet">
 		delete
 		from Pet
-		where id = #{petId}
+		where id = #{id}
 	</delete>
 
 </mapper>
