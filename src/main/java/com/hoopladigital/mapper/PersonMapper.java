@@ -14,3 +14,4 @@ public interface PersonMapper {
 	int updatePerson(Person person);
 	int deletePerson(Long personId);
 }
+

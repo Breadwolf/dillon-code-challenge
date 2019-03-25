@@ -27,14 +27,14 @@ public class PetResource {
 
 	@GET
 	@Produces("application/json")
-	public List<Pet> getPetList(@PathParam("personId") Long personId) {
+	public List<Pet> getPetList(@PathParam("personId") final Long personId) {
 		return petService.getPetList(personId);
 	}
 
 	@GET
 	@Path("{petId}")
 	@Produces("application/json")
-	public Pet getPet(@PathParam("personId") Long personId, @PathParam("petId") Long petId) {
+	public Pet getPet(@PathParam("personId") final Long personId, @PathParam("petId") final Long petId) {
 		Pet pet = petService.getPet(personId, petId);
 		if (pet == null) {
 			throw new NotFoundException("Combination of person id " + personId + " and pet id " + petId + " not found");
@@ -46,7 +46,7 @@ public class PetResource {
 	@POST
 	@Consumes("application/json")
 	@Produces("application/json")
-	public Pet createPet(@PathParam("personId") Long personId, Pet pet) {
+	public Pet createPet(@PathParam("personId") final Long personId, Pet pet) {
 		return petService.createPet(personId, pet);
 	}
 
@@ -54,7 +54,7 @@ public class PetResource {
 	@Path("{petId}")
 	@Consumes("application/json")
 	@Produces("application/json")
-	public Pet updatePet(@PathParam("personId") Long personId, @PathParam("petId") Long petId, Pet pet) {
+	public Pet updatePet(@PathParam("personId") final Long personId, @PathParam("petId") final Long petId, Pet pet) {
 		if (petService.getPet(personId, petId) == null) {
 			throw new NotFoundException("Combination of person id " + personId + " and pet id " + petId + " not found");
 		}
@@ -66,7 +66,7 @@ public class PetResource {
 
 	@DELETE
 	@Path("{petId}")
-	public void deletePet(@PathParam("personId") Long personId, @PathParam("petId") Long petId) {
+	public void deletePet(@PathParam("personId") final Long personId, @PathParam("petId") final Long petId) {
 		if (petService.getPet(personId, petId) == null) {
 			throw new NotFoundException("Combination of person id " + personId + " and pet id " + petId + " not found");
 		}

@@ -1,15 +1,12 @@
 package com.hoopladigital.resource;
 
 import com.hoopladigital.bean.Pet;
-import com.hoopladigital.bean.Pet;
-import com.hoopladigital.service.PetService;
 import com.hoopladigital.service.PetService;
 import com.hoopladigital.test.AbstractTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import javax.ws.rs.BadRequestException;
 import javax.ws.rs.NotFoundException;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +14,6 @@ import java.util.List;
 import static com.hoopladigital.test.MockHelper.allDeclaredMocks;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;

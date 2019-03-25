@@ -9,8 +9,11 @@ import org.junit.Test;
 import org.mockito.Mock;
 
 import static com.hoopladigital.test.MockHelper.allDeclaredMocks;
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 public class GuiceContextListenerTest extends AbstractTest {
 

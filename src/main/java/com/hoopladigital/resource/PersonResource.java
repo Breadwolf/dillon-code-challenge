@@ -37,8 +37,8 @@ public class PersonResource {
 	@GET
 	@Path("{personId}")
 	@Produces("application/json")
-	public Person getPerson(@PathParam("personId") Long personId) {
-		Person person = personService.getPerson(personId);
+	public Person getPerson(@PathParam("personId") final Long personId) {
+		final Person person = personService.getPerson(personId);
 		if (person == null) {
 			throw new NotFoundException("Invalid person id " + personId);
 		} else {
@@ -58,7 +58,7 @@ public class PersonResource {
 	@Path("{personId}")
 	@Consumes("application/json")
 	@Produces("application/json")
-	public Person updatePerson(@PathParam("personId") Long personId, Person person) {
+	public Person updatePerson(@PathParam("personId") final Long personId, Person person) {
 
 		//we could just ignore the incoming id (like in create), but I feel that this mismatch is more serious and may be
 		//a bug on the client side. They are likely trying to update the wrong record with the wrong data
@@ -77,7 +77,7 @@ public class PersonResource {
 
 	@DELETE
 	@Path("{personId}")
-	public void deletePerson(@PathParam("personId") Long personId) {
+	public void deletePerson(@PathParam("personId") final Long personId) {
 		if (personService.getPerson(personId) == null) {
 			throw new NotFoundException("Person id " + personId + " not found");
 		}
@@ -86,7 +86,7 @@ public class PersonResource {
 	}
 
 	@Path("{personId}/pets")
-	public PetResource getPetResource(@PathParam("personId") Long personId) {
+	public PetResource getPetResource(@PathParam("personId") final Long personId) {
 		if (personService.getPerson(personId) == null) {
 			throw new NotFoundException("Person id " + personId + " not found");
 		}
